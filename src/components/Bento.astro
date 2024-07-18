@@ -1,0 +1,78 @@
+---
+import Opcion1 from "./icons/Opcion1.astro";
+import Opcion2 from "./icons/Opcion 2.astro";
+import Opcion3 from "./icons/Opcion 3.astro";
+import Opcion4 from "./icons/Opcion 4.astro";
+import Opcion5 from "./icons/Opcion 5.astro";
+---
+
+<div class="h-screen h-full py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            <!-- image - start -->
+            <a href="#"
+                class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96">
+                <div class="fill">
+                    <Opcion2 alt="Greda en tu colegio."; class="transition duration-200 group-hover:scale-110"/>
+                </div>
+            </a>
+            <!-- image - end -->
+
+            <!-- image - start -->
+            <a href="#"
+                class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-96">
+                <div class="fill">
+                    <Opcion1 alt="Experiencia Alfarera." class="transition duration-200 group-hover:scale-110" />
+                </div>
+            </a>
+            <!-- image - end -->
+
+            <!-- image - start -->
+            <a href="#"
+                class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-3 md:h-96">
+                <div class="fill">
+                    <Opcion5 alt="Opcion 3." class="transition duration-200 group-hover:scale-110" />
+                </div>
+            </a>
+            <!-- image - end -->
+
+            <!-- image - start -->
+            <a href="#"
+                class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-96">
+                <div class="fill">
+                    <Opcion4 alt="Opcion 4." class="transition duration-200 group-hover:scale-110" />
+                </div>
+            </a>
+            <!-- image - end -->
+            
+            <!-- image - start -->
+            <a href="#"
+                class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-96">
+                <div class="fill">
+                    <Opcion3 alt="Greda en tu colegio."; class="transition duration-200 group-hover:scale-110"/>
+                </div>
+            </a>
+            <!-- image - end -->
+        </div>
+    </div>
+</div>
+
+
+<style>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {}
+        }
+    }
+
+    .fill {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
+</style>
