@@ -1,16 +1,23 @@
 ---
-import GranjaAlfarera from "./icons/GranjaAlfarera.astro";
+import GranjaAlfarera from "./icons/IconoGranja.astro";
+import Tablainicio from "./objetos/Tabla.astro";
+
 const navbarItems = [
-	{
+	{   
+		
 		name: "Inicio",
+		component: Tablainicio,
 		link: "/#inicio",
+		
 	},
 	{
 		name: "Información",
+		component: Tablainicio,
 		link: "/#información",
 	},
 	{
 		name: "Plataforma",
+		component: Tablainicio,
 		link: "/#plataforma",
 	},
 ];
@@ -34,7 +41,7 @@ const navbarItems = [
 
 	<nav class="hidden text-white grow lg:flex justify-center">
 		<ul
-			class="flex md:gap-12 py-2 lg:gap-10 bg-[#22272B] border-[#22272B] rounded-full"
+			class="flex md:gap-12 py-2 lg:gap-10 "
 		>
 			{
 				navbarItems.map((item) => (
@@ -42,10 +49,12 @@ const navbarItems = [
 						<a
 							aria-label={item.name}
 							href={item.link}
-							class="hover:bg-[#00E235] hover:text-white px-12 py-2 font-bold rounded-full transition-colors"
+							
+							
 						>
 							{item.name}
 						</a>
+						<Tablainicio class="size-40 text-primary-200" />	
 					</li>
 				))
 			}
