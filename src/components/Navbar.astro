@@ -4,19 +4,27 @@ import Tablainicio from "./objetos/Tabla.astro";
 
 const navbarItems = [
 	{   
-		
 		name: "Inicio",
 		component: Tablainicio,
 		link: "/#inicio",
-		
 	},
 	{
-		name: "Información",
+		name: "Servicios",
 		component: Tablainicio,
-		link: "/#información",
+		link: "/#nformación",
 	},
 	{
-		name: "Plataforma",
+		name: "Misión y Visión",
+		component: Tablainicio,
+		link: "/#plataforma",
+	},
+    {
+		name: "Como llegar",
+		component: Tablainicio,
+		link: "/#plataforma",
+	},
+    {
+		name: "Contactos",
 		component: Tablainicio,
 		link: "/#plataforma",
 	},
@@ -24,47 +32,33 @@ const navbarItems = [
 ---
 
 <header
-	class="shadow-md lg:bg-transparent lg:shadow-transparent fixed top-0 z-10 flex lg:justify-between w-full px-5 md:px-20 lg:px-32 items-center py-8"
->
-<div class="flex grow justify-center lg:justify-start">
-<div class="flex flex-col">
-	<div class="flex grow justify-center lg:justify-start">
+	class="shadow-md lg:bg-transparent lg:shadow-transparent fixed top-0 z-10 flex lg:justify-between w-full px-5 md:px-10 lg:px-10 items-center py-0 custom-bg-color">
+
+	<div class="relative">
 		<GranjaAlfarera class="size-40 text-primary-200" />
-		<h1 class="text-3xl md:text-4xl font-bold text-[#22272B]">
-			<a href="/#inicio">
-			</a>
-		</h1>
 	</div>
 	
 </div>
 </div>
 
-	<nav class="hidden text-white grow lg:flex justify-center">
-		<ul
-			class="flex md:gap-12 py-2 lg:gap-10 "
-		>
+	<nav class="relative hidden custom-text grow lg:flex justify-center">
+		<ul class="flex md:gap-10 py-0 lg:gap-10">
 			{
-				navbarItems.map((item) => (
-					<li>
-						<a
-							aria-label={item.name}
-							href={item.link}
-							
-							
-						>
-							{item.name}
-						</a>
-						<Tablainicio class="size-40 text-primary-200" />	
+				 navbarItems.map((item) => (
+					<li class="relative flex flex-col items-center">
+						<a 
+                            aria-label={item.name} 
+                            href={item.link}
+                            class="absolute inset-0 flex items-center justify-center text-center custom-text font-extrabold"
+                            style="z-index: 10;"
+                        >
+                            {item.name}
+                        </a>
+                        <item.component class="block" />
 					</li>
 				))
 			}
 		</ul>
 	</nav>
-	<div class="grow lg:justify-end justify-center flex">
-		<a
-			href="mailto:contacto@alphanex.cl"
-			class="border-2 border-[#00E235] bg-transparent px-2 md:px-4 py-2 font-bold rounded-full hover:bg-[#00E235] hover:text-white transition-colors"
-			>Contactanos</a
-		>
-	</div>
 </header>
+
