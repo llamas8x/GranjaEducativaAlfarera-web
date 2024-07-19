@@ -1,6 +1,10 @@
 ---
-import GranjaAlfarera from "./icons/IconoGranja.astro";
+import GranjaAlfarera from "./icons/GranjaAlfarera.astro";
 import Tablainicio from "./objetos/Tabla.astro";
+
+const handleRedirection = () => {
+  window.location.href = '/ComoLlegar';
+};
 
 const navbarItems = [
 	{   
@@ -21,7 +25,7 @@ const navbarItems = [
     {
 		name: "Como llegar",
 		component: Tablainicio,
-		link: "/#plataforma",
+		link: "./ComoLlegar",
 	},
     {
 		name: "Contactos",
@@ -42,10 +46,11 @@ const navbarItems = [
 </div>
 
 	<nav class="relative hidden custom-text grow lg:flex justify-center">
-		<ul class="flex md:gap-10 py-0 lg:gap-10">
+		<ul class="flex md:gap-10 py-0 lg:gap-5">
 			{
 				 navbarItems.map((item) => (
-					<li class="relative flex flex-col items-center">
+					<div class="group">
+					<li class="relative flex flex-col items-center transition duration-200 group-hover:scale-110">
 						<a 
                             aria-label={item.name} 
                             href={item.link}
@@ -56,9 +61,19 @@ const navbarItems = [
                         </a>
                         <item.component class="block" />
 					</li>
+					</div>
 				))
 			}
 		</ul>
 	</nav>
 </header>
 
+<style>
+	.custom-bg-color{
+        background-color:#F5E5D0
+    }
+
+    .custom-text{
+        color:#76441F
+    }
+</style>

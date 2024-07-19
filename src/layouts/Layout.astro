@@ -1,6 +1,7 @@
 ---
 import '@fontsource/architects-daughter';
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 }
@@ -18,11 +19,14 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class="container_row">
-			<div class="layer1"><Navbar/></div>
-			<div class="layer2"><slot /></div>
-		</div>
+	<body  class="custom-bg-color">
+		<main>
+			<div class="container_row">
+				<div class="layer"><Navbar/></div>
+				<div class="layer"><slot /></div>
+				<div class="layer"><Footer /></div>
+			</div>
+		<main/>
 	</body>
 </html>
 
@@ -51,17 +55,17 @@ const { title } = Astro.props;
 		top:170px;
 	}
 
-	.layer1, .layer2{
- 		grid-column: 1;
- 		grid-row: 1;
+	.layer{
+ 		 grid-column: 1;
+ 		 grid-row: 1;
 	}
 
-    .custom-bg-color{
-        background-color:#F5E5D0
+	.custom-bg-color{
+        background-color:#F8F1E7
     }
 
     .custom-text{
         color:#76441F
     }
-    
+
 </style>
