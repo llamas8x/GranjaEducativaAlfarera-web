@@ -1,34 +1,64 @@
 ---
+import Tablainicio from "./objetos/Tabla.astro";
 ---
-
 
 <section class="the-list-content bg-interior" id="visitas-educativas">
     <div class="barra-bajo-banner"></div>
 
     <div class="container">
-        
-        <div class="col-md-12 text-center m-t-20 m-b-20" style="font-family: 'Skranji', cursive;">
-            <span class="form-title-normal"> ELIJE CÓMO </span> <span class="form-title-bold"> QUIERES LLEGAR AL PARQUE </span>
-        </div>
-        
-        <div class="col-lg-6">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-            <div class="col-md-4">
-                <a href="https://goo.gl/maps/Af3BGwCRhVQ2" target="_blank" class="btnAzul">Ver Google Maps</a>
+        <div class="row">
+            <div class="col-md-12 text-center custom-text h-40 mt-20 mb-20" style="font-family: 'Architects Daughter', cursive;">
+                <span class="form-title-normal">ELIJE CÓMO</span> <span class="form-title-bold"> LLEGAR</span>
             </div>
-            <div class="col-md-1">&nbsp;</div>
-            <div class="col-md-4">
-                <a href="https://www.waze.com/ul?ll=-33.71366290%2C-70.72605100&amp;navigate=yes&amp;zoom=16" target="_blank" class="btnAzul">Ver en Waze</a>
+        </div>
+
+        <div class="flex flex-wrap items-center mt-20 text-left">
+            <div class="w-full md:w-3/5 lg:w-1/2 px-4">
+                <img src="/Direccion.png" alt="Mapa de cómo llegar" class="img-responsive custom-img">
             </div>
-            
-            
-            
+            <div class="w-full md:w-2/5 lg:w-1/2 px-4 md:order-first text-center md:text-left lg:pr-12  ">
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 items-center">
+                <h3 class="font-bold mt-8 text-xl md:mt-0 sm:text-2xl">
+                    <a href="https://maps.app.goo.gl/zUqFwEMuhjy74zUt7" target="_blank" class="btnAzul">Ver Google Maps</a>
+                </h3>
+                <h3 class="font-bold mt-8 text-xl md:mt-0 sm:text-2xl">
+                    <a href="https://waze.com/ul/h66j2scup9" target="_blank" class="btnAzul">Ver en Waze</a>
+                </h3>
+            </div>
+            </div>
         </div>
-
-        <div class="col-lg-6">
-            <img src="/wp-content/themes/buinzoo/img/mapa-como-llegar.png " class="img-responsive" alt="">
-        </div>
-
     </div>
 </section>
+
+<style>
+    .btnAzul {
+        display: inline-block;
+        padding: 10px 20px;
+        color: white;
+        background-color: #76441F;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .btnAzul:hover {
+        background-color: #9e5b27;
+    }
+    .bg-interior {
+        background-color: #f5f5f5;
+    }
+    .mt-20 {
+        margin-top: 20px;
+    }
+    .mb-20 {
+        margin-bottom: 20px;
+    }
+    .custom-text{
+        color:#76441F;
+        font-size: 45px;
+    }
+    .custom-img{
+        stroke:#76441F;
+        stroke-width: 3%;
+        border: 5px solid #76441F;
+        border-radius: 0.5rem;
+    }
+</style>

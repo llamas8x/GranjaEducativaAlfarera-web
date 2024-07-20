@@ -2,10 +2,6 @@
 import GranjaAlfarera from "./icons/GranjaAlfarera.astro";
 import Tablainicio from "./objetos/Tabla.astro";
 
-const handleRedirection = () => {
-  window.location.href = '/ComoLlegar';
-};
-
 const navbarItems = [
 	{   
 		name: "Inicio",
@@ -15,12 +11,7 @@ const navbarItems = [
 	{
 		name: "Servicios",
 		component: Tablainicio,
-		link: "/#nformación",
-	},
-	{
-		name: "Misión y Visión",
-		component: Tablainicio,
-		link: "/#plataforma",
+		link: "./Servicios",
 	},
     {
 		name: "Como llegar",
@@ -28,9 +19,9 @@ const navbarItems = [
 		link: "./ComoLlegar",
 	},
     {
-		name: "Contactos",
+		name: "Contacto",
 		component: Tablainicio,
-		link: "/#plataforma",
+		link: "https://api.whatsapp.com/send/?phone=56998793533&text&type=phone_number&app_absent=0",
 	},
 ];
 ---
