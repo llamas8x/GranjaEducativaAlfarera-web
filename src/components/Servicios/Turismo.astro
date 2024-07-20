@@ -18,7 +18,7 @@ const NexcityServices = [
 ];
 ---
 
-<section
+<div
 	class="grid md:grid-cols-2 gap-10 md:gap-24 justify-items-center items-center"
 >
 	<img
@@ -41,8 +41,21 @@ const NexcityServices = [
 				</div>
 			))
 		}
-		<button disabled class="bg-primary-300 py-2 px-5 rounded-lg"
-			>Pdf</button
-		>
+        <h3 class="font-bold mt-8 text-s md:mt-0 sm:text-2xl">
+            <a href="Ficha turismo 2024.pdf" download class="custom-text">Para ver el pdf completo presione aquí.</a>
+        </h3>
 	</div>
-</section>
+</div>
+
+<style>
+    .custom-img{
+        stroke:#76441F;
+        stroke-width: 3%;
+        border: 5px solid #76441F;
+        border-radius: 0.5rem;
+    }
+    .custom-text{
+        color:#76441F;
+        font-size: 15px;
+    }
+</style>
