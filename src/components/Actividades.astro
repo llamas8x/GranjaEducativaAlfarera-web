@@ -1,0 +1,121 @@
+---
+import Act1 from "./imagenes/Curso.astro"
+import Act2 from "./imagenes/Familia.astro"
+import Act3 from "./imagenes/Figuras.astro"
+import Izquierda from "./icons/Flechaiz.astro"
+import Derecha from "./icons/Flechade.astro"
+---
+<div class="actividad items-center justify-center flex ">
+    <h1>Actividades</h1>
+</div>
+<div class="flex justify-center items-center">
+    <button class="carousel-control-prev absolute" onclick="prevSlide()">
+        <Izquierda />
+    </button>
+    <div class="carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-item">
+                <Act1 id="img1" style="width: 450px; height: 420px; object-fit: cover; border-radius: 100px;" />
+                <div class="carousel-text">Celebra tu Cumpleaños de manera única con la Granja Alfarera.</div>
+            </div>
+            <div class="carousel-item">
+                <Act2 id="img2" style="width: 450px; height: 420px; object-fit: cover; border-radius: 100px;" />
+                <div class="carousel-text ">Invita a tus amig@s y disfruta de una actividad novedosa y muy entretenida.</div>
+            </div>
+            <div class="carousel-item">
+                <Act3 id="img3" style="width: 450px; height: 420px; object-fit: cover; border-radius: 100px;" />
+                <div class="carousel-text">Felices se fueron los pequeños después de hacer sus propias figuritas de greda ☺️</div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-next absolute" onclick="nextSlide()">
+        <Derecha />
+    </button>
+</div>
+
+<style>
+    .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+    }
+
+    .carousel-item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: scale 0.5s ease;
+        z-index: 0;
+        scale: 0.8;
+    }
+
+    .carousel-item.active {
+        position: absolute;
+        z-index: 1;
+        scale: 1;
+    }
+    .actividad{
+        font-size:xx-large;
+        font-weight:bolder;
+        color:#76441F;
+    }
+    .carousel-text {
+        font-size:large;
+        font-weight:bold;
+        position: absolute;
+        bottom: -50px;
+        text-align: center;
+        width: 100%;
+        color:#76441F;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .carousel-item.active .carousel-text {
+        opacity: 1;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {      
+        font-size: 24px;
+        color: #000;
+        z-index: 2;
+        display: flex;
+        position: relative;
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;
+    }
+</style>
+
+<script>
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let currentIndex = 1;
+
+    function updateCarousel() {
+        items.forEach((item, index) => {
+            item.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
+        updateCarousel();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    }
+
+    document.querySelector('.carousel-control-prev').addEventListener('click', prevSlide);
+    document.querySelector('.carousel-control-next').addEventListener('click', nextSlide);
+    updateCarousel();
+</script>

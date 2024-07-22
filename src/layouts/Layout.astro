@@ -1,6 +1,8 @@
 ---
-import '@fontsource/architects-daughter';
-import Navbar from "../components/Navbar.astro";
+import '@fontsource/architects-daughter'
+import Navbar from "../components/Navbar.astro"
+import Actividades from "../components/Actividades.astro"
+import Footer from "../components/Footer.astro"
 interface Props {
 	title: string;
 }
@@ -14,15 +16,22 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href=/Logo_Greda.svg>
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Granja Alfarera</title>
 	</head>
-	<body>
-		<Navbar/>
-		<slot />
+	<body  class="custom-bg-color">
+		<main>
+			<div class="container_row">
+				<div class="layer"><Navbar/></div>
+				<div class="layer"><slot /></div>
+				<div class="layer"><Footer /></div>
+			</div>
+		<main/>
 	</body>
 </html>
+
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -41,4 +50,23 @@ const { title } = Astro.props;
 	
 	}
 
+	.container_row{
+		display:list-item;
+		position:relative;
+		top:170px;
+	}
+
+	.layer{
+ 		 grid-column: 1;
+ 		 grid-row: 1;
+	}
+
+	.custom-bg-color{
+        background-color:#F8F1E7
+    }
+
+    .custom-text{
+        color:#76441F
+    }
+    
 </style>

@@ -1,0 +1,66 @@
+---
+
+
+const NexcityServices = [
+	{
+		title: "Objetivos:",
+		description: "Obtenemos soluciones para apoyar unidades curriculares mencionadas, presentando actividades adaptadas a las necesidades del profesor, ya sea de forma lúdica o específica..",
+	},
+	{
+		title: "Actividades del Taller",
+		description:[
+			"1. Estado de las tareas de tus funcionarios de seguridad.",
+			"2. Supervisión en tiempo real.",
+			"3. Reportes detallados de actividades."
+		],
+	},
+	{
+		title: "Requerimientos",
+		description:
+			"Coordinación previa, cumplir horarios, traer cajas de zapatos y delantales.",
+	},
+];
+---
+
+<div
+	class="grid grid-cols-2 gap-10 md:gap-24 justify-items-center items-center"
+>
+	<img
+		src="/colegio.jpg"
+		alt=""
+		class="w-52 md:w-72 mx-auto md:mr-0 md:ml-auto aspect-auto custom-img"
+	/>
+
+	<div class="flex flex-col gap-3 md:items-start items-center">
+		<h3 class="flex gap-2 text-2xl mb-2">
+			<href Icono_educacion.astro="text-primary-400" /> Taller Alfarero Educativo
+		</h3>
+		{
+			NexcityServices.map((servicios) => (
+				<div class="w-1/2 flex flex-col items-center md:items-start md:flex">
+					<h4 class="font-bold text-xl">{servicios.title}</h4>
+					<p class="hidden md:inline-block text-pretty">
+						{servicios.description}
+					</p>
+				</div>
+			))
+		}
+        <h3 class="font-bold mt-8 text-s md:mt-0 sm:text-2xl">
+		<a href="Ficha educacion 2024.pdf" download class="custom-text">Para ver el pdf completo presione aquí.</a>
+        </h3>
+	</div>
+</div   >
+
+
+<style>
+    .custom-img{
+        stroke:#76441F;
+        stroke-width: 3%;
+        border: 5px solid #76441F;
+        border-radius: 0.5rem;
+    }
+    .custom-text{
+        color:#76441F;
+        font-size: 15px;
+    }
+</style>
